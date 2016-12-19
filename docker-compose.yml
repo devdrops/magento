@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+    mysql:
+        image: mysql:5.6
+        env_file:
+            - .env
+        volumes:
+            - database:/var/lib/mysql
+        ports:
+            - "3307:3306"
+
+    magento:
+        image: devdrops/magento:1.9.1.1
+        volumes:
+            - ./www/:/var/www/
+        ports:
+            - "8080:80"
+        depends_on:
+            - mysql
+
+volumes:
+    database:
+        driver: local
