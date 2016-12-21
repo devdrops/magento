@@ -13,9 +13,9 @@ clear:
 	sudo rm -rf $(PWD)data/*
 
 importdb:
-	docker-compose exec -d mysql mysql -uroot -proot < $(PWD)www/dump.sql
+	docker-compose exec -T mysql mysql -uroot -proot < $(PWD)www/dump.sql
 
 install:
 	tar -xzf $(PWD)magento-sources/$(PACKAGE) -C $(PWD)www
-	$(MAKE) importdb
+#	$(MAKE) importdb
 
