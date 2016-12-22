@@ -2,7 +2,7 @@ version: '2'
 
 services:
     mysql:
-        image: mysql:5.6
+        image: devdrops/magento-mysql:latest
         env_file:
             - .env
         volumes:
