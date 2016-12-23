@@ -26,4 +26,6 @@ install:
         else
 	@tput setaf 3
 	tar -xzf $(PWD)magento-sources/$(PACKAGE) -C $(PWD)www
+
+	@sleep 8
         endif
